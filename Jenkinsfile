@@ -18,7 +18,7 @@ pipeline {
                 script {
                     
                           withSonarQubeEnv('SonarQubeServer') {
-                             bat 'mvn sonar:sonar'
+                             bat 'sonar-scanner'
                 }
                         }
                     }
