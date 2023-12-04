@@ -27,13 +27,14 @@ pipeline {
                 }
 
                 // Execute SonarQube analysis
-                withSonarQubeEnv('SonarQubeServer') {
+                withSonarQubeEnv('SonarQubeServer') 
+                {
                     bat 'sonar-scanner'
                 }
             }
         }
     }
-    }
+    
 }
         
     
