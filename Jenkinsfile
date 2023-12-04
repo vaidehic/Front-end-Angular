@@ -1,6 +1,13 @@
 pipeline {
     agent any
 
+   environment {
+        // Define the path to the SonarQube Scanner executable
+        SONAR_SCANNER_HOME = "C:/Users/vaidehic/Documents/sonar-scanner-4.0.0.1744-windows"
+        PATH = "${SONAR_SCANNER_HOME}/bin:${env.PATH}"
+    }
+
+  
     stages {
         // stage('Build Angular Project') {
         //     steps {
