@@ -31,6 +31,29 @@ pipeline {
                 }
             }
         }
+
+          sstage('Upload_Artifact') {
+steps {
+    script{
+def server = Artifactory.server 'artifactory'
+               def uploadSpec = """{
+"files": [
+{
+      "pattern": "target/*.jar",
+"target": "front-end-angular/"
+}
+]
+}"""
+server.upload(uploadSpec)
+}
+}
+
+
+
+
+
+
+      
     }
     
 }
