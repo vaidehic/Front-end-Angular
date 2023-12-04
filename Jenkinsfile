@@ -23,15 +23,8 @@ pipeline {
                     }
                 }
             }
-        }
-    }
+        
+    
 
-    post {
-        success {
-            echo 'Pipeline successfully executed!'
-        }
-        failure {
-            echo 'Pipeline failed. Check the console output for details.'
-        }
-    }
+    
 }
