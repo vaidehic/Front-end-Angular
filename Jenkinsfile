@@ -1,12 +1,6 @@
 pipeline {
     agent any
 
-   environment {
-        // Define the path to the SonarQube Scanner executable
-        SONAR_SCANNER_HOME = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-        PATH = "${SONAR_SCANNER_HOME}/bin:${env.PATH}"
-    }
-
     stages {
         // stage('Build Angular Project') {
         //     steps {
@@ -16,20 +10,17 @@ pipeline {
         //                 bat 'npm run build'
         //             }
         //         } }
-            
+
 
          stage('SonarQube Analysis') {
             steps {
-                // Install SonarQube Scanner
-                script {
-                    def scannerHome = tool 'SonarQubeScanner'
-                    env.PATH = "${scannerHome}/bin:${env.PATH}"
-                }
-
+               script {
+       scannerHome = tool 'sonar-scanner'
+    }
                 // Execute SonarQube analysis
                 withSonarQubeEnv('SonarQubeServer') 
                 {
-                    bat 'sonar-scanner'
+                    bat 'C:\Users\vaidehic\Documents\sonar-scanner-4.0.0.1744-windows\bin\sonar-scanner'
                 }
             }
         }
