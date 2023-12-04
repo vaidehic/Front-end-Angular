@@ -11,6 +11,9 @@ pipeline {
     stages {
         stage('Build Angular Project') {
             steps {
+              when{
+              changeset '**/main/**'
+              }
                 script {
                         bat 'npm install -g @angular/cli'
                         bat 'npm install'
