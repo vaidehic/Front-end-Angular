@@ -5,7 +5,7 @@ pipeline {
         stage('Build Angular Project') {
             steps {
                 script {
-                 
+                        bat 'npm install -g @angular/cli'
                         bat 'npm install'
                         bat 'npm run build'
                     }
