@@ -20,7 +20,7 @@ pipeline {
                 // Execute SonarQube analysis
                 withSonarQubeEnv('SonarQubeServer') 
                 {
-                    bat 'C:\Users\vaidehic\Documents\sonar-scanner-4.0.0.1744-windows\bin\sonar-scanner'
+                    bat 'C:/Users/vaidehic/Documents/sonar-scanner-4.0.0.1744-windows/bin/sonar-scanner'
                 }
             }
         }
