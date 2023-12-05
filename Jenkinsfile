@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+ 
 
    environment {
         // Define the path to the SonarQube Scanner executable
