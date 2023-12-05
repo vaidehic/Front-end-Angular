@@ -38,10 +38,10 @@ pipeline {
                         ' sonar.projectVersion'='1.0' ,
                         ' sonar.sources'='src' ,
                         ' sonar.language'='ts' ,
-             #exclusions'
+             // exclusions'
                         ' sonar.exclusions'='node_modules/*,**/*.spec.ts' ,
 
-          #coverage reporting
+          // coverage reporting
                         ' sonar.typescript.lcov.reportPaths'='coverage/lcov.info' ,
                         ' sonar.host.url'='http://172.27.59.109:9000/ ',
                         ' sonar.login'='accc74edb04d69f56282f915fd081fccde3e54b1 '
