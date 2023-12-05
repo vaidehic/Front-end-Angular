@@ -28,24 +28,30 @@ pipeline {
        scannerHome = tool 'sonar-scanner'
     }
                 // Execute SonarQube analysis
-                withSonarQubeEnv('SonarQubeServer') 
-                {
-                    bat 'C:/Users/vaidehic/Documents/apps/sonar-scanner-4.0.0.1744-windows/bin/sonar-scanner'
-                        -D sonar.projectName=Front-End-angular \
-                        -D sonar.projectKey=Front-End-angular \
-                        -D sonar.projectVersion=1.0 \
-                        -D sonar.sources=src \
-                        -D sonar.language=ts \
+                withSonarQubeEnv('SonarQubeServer') {
+                  //Define Sonarqube properties
+                  withSonarQubeProperties
+                  ([
+                    
+                        ' sonar.projectName=Front-End-angular 
+                        ' sonar.projectKey=Front-End-angular 
+                        ' sonar.projectVersion=1.0 
+                        ' sonar.sources=src 
+                        ' sonar.language=ts 
              #exclusions
-                        -D  sonar.exclusions=node_modules/*,**/*.spec.ts \
+                        ' sonar.exclusions=node_modules/*,**/*.spec.ts 
 
           #coverage reporting
-                        -D sonar.typescript.lcov.reportPaths=coverage/lcov.info \
-                        -D sonar.host.url=http://172.27.59.109:9000/ \
-                        -D sonar.login=accc74edb04d69f56282f915fd081fccde3e54b1 \
+                        ' sonar.typescript.lcov.reportPaths=coverage/lcov.info 
+                        ' sonar.host.url=http://172.27.59.109:9000/ 
+                        ' sonar.login=accc74edb04d69f56282f915fd081fccde3e54b1 
+                   ]) 
+                  {
+                     bat 'C:/Users/vaidehic/Documents/apps/sonar-scanner-4.0.0.1744-windows/bin/sonar-scanner'
+                  }
                 }
             }
-        }
+        
 
         
 
