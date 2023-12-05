@@ -28,7 +28,8 @@ pipeline {
        scannerHome = tool 'sonar-scanner'
     }
                 // Execute SonarQube analysis
-                withSonarQubeEnv('SonarQubeServer') {
+                withSonarQubeEnv('SonarQubeServer') 
+              {
                   //Define Sonarqube properties
                   withSonarQubeProperties
                   ([
@@ -51,10 +52,7 @@ pipeline {
                   }
                 }
             }
-        
-
-        
-
+         }
       
     }
     
