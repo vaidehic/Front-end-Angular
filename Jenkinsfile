@@ -7,7 +7,12 @@ pipeline {
         PATH = "${SONAR_SCANNER_HOME}/bin:${env.PATH}"
     }
 
-  
+   agent
+	{
+	node{
+		label 'vaidehi-node'
+	}
+	}
     stages {
         stage('Build Angular Project') {
             steps {
