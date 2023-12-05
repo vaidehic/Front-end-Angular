@@ -11,21 +11,25 @@ pipeline {
     stages {
         stage('Build Angular Project') {
             steps {
-              when{
-              // changeset 'main'
-              }
+              
                 script {
                         bat 'npm install -g @angular/cli'
                         bat 'npm install'
                         bat 'npm run build'
-                    }
-                } }
+                      }
+                } 
+        
+        }
 
-        stage('SonarQube Analysis') {
-            steps {
-                script {
+        stage('SonarQube Analysis') 
+      {
+            steps 
+         {
+                script 
+             {
                     // Set up SonarQube environment
-                    withSonarQubeEnv('SonarQubeServer') {
+                    withSonarQubeEnv('SonarQubeServer') 
+                  {
                         // Define SonarQube properties
                         withSonarQubeProperties([
                             'sonar.projectKey': 'Front-End-angular',
@@ -39,12 +43,12 @@ pipeline {
                         ]) {
                             // Execute SonarQube Scanner
                              bat 'C:/Users/vaidehic/Documents/apps/sonar-scanner-4.0.0.1744-windows/bin/sonar-scanner'
-                        }
+                           }
                     }
                 }
             }
         }
-    }
+    
 
     //      stage('SonarQube Analysis') {
     //         steps {
@@ -78,7 +82,7 @@ pipeline {
     //         }
     //      }
       
-    }
+    
 }
 }
         
