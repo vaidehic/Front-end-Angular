@@ -37,7 +37,7 @@ pipeline {
                         ' sonar.projectKey'='Front-End-angular' ,
                         ' sonar.projectVersion'='1.0' ,
                         ' sonar.sources'='src' ,
-                        ' sonar.language'=ts' ,
+                        ' sonar.language'='ts' ,
              #exclusions'
                         ' sonar.exclusions'='node_modules/*,**/*.spec.ts' ,
 
