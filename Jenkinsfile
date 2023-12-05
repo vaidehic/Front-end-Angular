@@ -34,7 +34,7 @@ pipeline {
                   withSonarQubeProperties
                   ([
                     
-                        ' sonar.projectName '= 'Front-End-angular',
+                        ' sonar.projectName'='Front-End-angular',
                         ' sonar.projectKey'='Front-End-angular' ,
                         ' sonar.projectVersion'='1.0' ,
                         ' sonar.sources'='src' ,
