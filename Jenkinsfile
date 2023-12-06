@@ -33,17 +33,16 @@ agent any
          {
                 script 
              {
-                    // Set up SonarQube environment
-                    withSonarQubeEnv('SonarQubeServer') 
-                  {
-
-                     
-                        // Define SonarQube properties
-                        withSonarQubeProperties([
-                          withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
+                withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
                         // Use SONAR_TOKEN in your build steps
                         echo "SonarQube Token: $SONAR_TOKEN"
                  }
+                    // Set up SonarQube environment
+                    withSonarQubeEnv('SonarQubeServer') 
+                  {
+                        // Define SonarQube properties
+                        withSonarQubeProperties([
+                         
                             'sonar.projectKey': 'Front-End-angular',
                             'sonar.projectName': 'Front-End-angular:a1',
                             'sonar.sources': 'src',
@@ -62,37 +61,7 @@ agent any
         }
     
 
-    //      stage('SonarQube Analysis') {
-    //         steps {
-    // //            script {
-    // //    scannerHome = tool 'sonar-scanner'
-    // // }
-    //             // Execute SonarQube analysis
-    //             withSonarQubeEnv('SonarQubeServer') 
-    //           {
-    //               //Define Sonarqube properties
-    //               withSonarQubeProperties
-    //               ([
-                    
-    //                     ' sonar.projectName':'Front-End-angular',
-    //                     ' sonar.projectKey':'Front-End-angular' ,
-    //                     ' sonar.projectVersion':'1.0' ,
-    //                     ' sonar.sources':'src' ,
-    //                     ' sonar.language':'ts' ,
-    //          // exclusions'
-    //                     ' sonar.exclusions':'node_modules/*,**/*.spec.ts' ,
-
-    //       // coverage reporting
-    //                     ' sonar.typescript.lcov.reportPaths':'coverage/lcov.info' ,
-    //                     ' sonar.host.url':'http://172.27.59.109:9000/ ',
-    //                     ' sonar.login':'accc74edb04d69f56282f915fd081fccde3e54b1 '
-    //                ]) 
-    //               {
-    //                  bat 'C:/Users/vaidehic/Documents/apps/sonar-scanner-4.0.0.1744-windows/bin/sonar-scanner'
-    //               }
-    //             }
-    //         }
-    //      }
+   
       
     
 }
