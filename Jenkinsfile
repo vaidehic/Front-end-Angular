@@ -33,18 +33,17 @@ agent any
          {
                 script 
              {
-                
-                   
                     // Set up SonarQube environment
                     withSonarQubeEnv('SonarQubeServer') 
                   {
 
-                     withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
+                     
+                        // Define SonarQube properties
+                        withSonarQubeProperties([
+                          withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
                         // Use SONAR_TOKEN in your build steps
                         echo "SonarQube Token: $SONAR_TOKEN"
                  }
-                        // Define SonarQube properties
-                        withSonarQubeProperties([
                             'sonar.projectKey': 'Front-End-angular',
                             'sonar.projectName': 'Front-End-angular:a1',
                             'sonar.sources': 'src',
