@@ -39,7 +39,8 @@ agent any
                         echo "SonarQube Token: ${SONAR_TOKEN}"
                  
                             // Execute SonarQube Scanner
-                             bat 'C:/Users/vaidehic/Documents/apps/sonar-scanner-4.0.0.1744-windows/bin/sonar-scanner'
+                             
+                             bat "C:/Users/vaidehic/Documents/apps/sonar-scanner-4.0.0.1744-windows/bin/sonar-scanner -Dsonar.login=${SONAR_TOKEN_CREDS} -Dsonar.projectKey=Front-End-angular -Dsonar.projectName='Front-End-angular'"
                            }
               }
            }
