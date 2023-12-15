@@ -1,6 +1,7 @@
 pipeline {
  
-agent any
+agent any 
+  
    environment {
         // Define the path to the SonarQube Scanner executable
         SONAR_SCANNER_HOME = "C:/Users/vaidehic/Documents/apps/sonar-scanner-4.0.0.1744-windows"
