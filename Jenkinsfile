@@ -8,7 +8,7 @@ agent any
         SONAR_TOKEN_CREDS = credentials('sonarqube-token')
     }
    triggers {
-        pollSCM('H * * * *')
+        pollSCM('* * * * *')
     }
   
  //   agent
