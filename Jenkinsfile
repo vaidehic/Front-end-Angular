@@ -8,9 +8,9 @@ agent any
         PATH = "${SONAR_SCANNER_HOME}/bin:${env.PATH}"
         SONAR_TOKEN_CREDS = credentials('sonarqube-token')
     }
-   triggers {
-        pollSCM('* * * * *')
-    }
+   // triggers {
+   //      pollSCM('* * * * *')
+   //  }
   
  //   agent
 	// {
